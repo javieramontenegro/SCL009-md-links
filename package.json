@@ -1,4 +1,38 @@
 {
   "name": "md-links",
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "dependencies": {
+    "filehound": "^1.17.0",
+    "jest": "^24.8.0",
+    "markdown-link-extractor": "^1.2.1",
+    "marked": "^0.6.2"
+  },
+  "description": "[Markdown](https://es.wikipedia.org/wiki/Markdown) es un lenguaje de marcado\r ligero muy popular entre developers. Es usado en muchísimas plataformas que\r manejan texto plano (GitHub, foros, blogs, ...), y es muy común\r encontrar varios archivos en ese formato en cualquier tipo de repositorio\r (empezando por el tradicional `README.md`).",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javieramontenegro/SCL009-md-links.git"
+  },
+  "keywords": [
+    "markdown",
+    "node",
+    "javascript",
+    "librerias"
+  ],
+  "author": "javiera",
+  "license": "ISC",
+  "bin": {
+    "md-links": "index.js"
+  },
+  "bugs": {
+    "url": "https://github.com/javieramontenegro/SCL009-md-links/issues"
+  },
+  "homepage": "https://github.com/javieramontenegro/SCL009-md-links#readme"
 }
