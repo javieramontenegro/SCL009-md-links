@@ -25,7 +25,8 @@ Md-links extrae los links de tus archivos md, os cuales puedes validarlos para v
 Debes poner en la terminal npm install --global javieramontenegro-md-links.
 
 ##Usabilidad
-const md-links = require ( 'javieramontenegro-md-links' ) ; 
+
+const mdLinks = require ( 'javieramontenegro-md-links' ) 
 
 md-links <path-to-file> [options]
 Por ejemplo:
