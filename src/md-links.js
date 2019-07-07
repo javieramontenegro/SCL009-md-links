@@ -20,7 +20,7 @@ const searchDirectory = (path) => {
   
  }
 
-//FUNCION VE ARCHIVO
+//FUNCION VE ARCHIVO UNICO
 const searchFile =(path) => {
 
  return new Promise((resolve,reject) =>{
@@ -47,6 +47,7 @@ renderer.link= function (href,title,text){
   })  
 }
 
+//FUNCION VE ARCHIVO CUANDO ES CARPETA
 
 
 
@@ -76,9 +77,19 @@ const mdLinks = (path,options) => {
                   }).catch(()=>{
                       searchFile(path)
                       .then((links)=>{
-                          resolve(validateLinks(links)); 
-              })
-          })
+                          validateLinks(links)
+                          .then(res =>{
+                            let link=[];
+                            link.push(res)
+                             resolve(link)})
+                        
+                        
+                        })
+                           
+                          
+         
+         
+                        })
       })
   }
   else{
@@ -88,7 +99,11 @@ const mdLinks = (path,options) => {
               .then(res=>{
                   resolve(Promise.all(res.map(file=>{return searchFile(file) })))})
               .catch(()=>{                   
-                  resolve(searchFile(path));
+                  searchFile(path)
+                  .then(res =>{
+                    let link=[];
+                    link.push(res)
+                     resolve(link)})
               })
              
       })
@@ -131,14 +146,16 @@ const validateLinks=(links)=>{
 const stats = (links)=>{
   let href = [];
   let response = {};
-  href = links.map(link=>{
-      return link.href;
+  href = links.map(res=>{
+      return res.href;
   });
   response.linksTotal=href.length;
   let hrefSet= new Set(href);
   response.linksUnique=hrefSet.size;
-return stats
+return response
 }
+
+
 
 
 

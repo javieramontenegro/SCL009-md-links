@@ -58,6 +58,17 @@ describe('mdLinks', () => {
   
        ] )});
 
+       test('Deberia retornar el valor de links totales y únicos', () => {
+          expect.assertions(1);
+        return mdLinks.stats([{href:'https://github.com/javieramontenegro/SCL009-md-links'
+        }])
+      .then(res => expect(res.linksTotal).toEqual({"linksTotal": 1}) )
+          
+    
+    });
+
+
+
 
 
 });
